@@ -1,1 +1,1 @@
-# Plateformer
+# Platformer
