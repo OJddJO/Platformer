@@ -10,7 +10,7 @@ x,y,yVel,t=50,100,0,15
 pf_col=[(70,70,255),(0,0,0)]
 rTime,rMax=5,5
 
-lvl=[[(10,150,20,40,pf_col[1])]]
+lvl=[[]]
 
 class GameEngine:
   def init():
@@ -18,7 +18,9 @@ class GameEngine:
     fRect(10,10,GW,GH,'gray')
     return True
   def quit():
-    if keydown(KEY_ZERO):fRect(0,0,SW,SH,'black');return False
+    if keydown(KEY_ZERO):
+      fRect(0,0,SW,SH,'black')
+      return False
     else:return True
   def refresh():
     global rTime,rMax
@@ -30,7 +32,8 @@ class GameEngine:
       while p:
         if keydown(KEY_BACKSPACE):
           p=False
-          sleep(0.5)
+          sleep(0.2)
+        GameEngine.quit()
 class Entity:
   def player():
     for L in range(10):
@@ -82,7 +85,6 @@ class Entity:
   def platform():
     def hitbox():
       pass
-
 
 run=GameEngine.init()
 
