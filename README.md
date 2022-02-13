@@ -4,4 +4,4 @@
 
 **All the instruction are in the game**
 
-Link : https://my.numworks.com/python/ojddjo/platformer
+Link to download the game : [Here](https://my.numworks.com/python/ojddjo/platformer)
