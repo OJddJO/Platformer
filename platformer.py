@@ -11,6 +11,8 @@ yVel,t=0,10
 pf_col=[(64,252,64),(0,0,0)]
 rTime,rMax=0,10
 
+clock = 0
+
 pfRefresh,lvl=0,0
 pf=[
 [[20,180,30,10],[80,160,30,10],[140,140,30,10],[200,120,30,10],[260,100,30,10]],
@@ -131,7 +133,8 @@ class Entity:
               for s in range(300):
                 for l in range(10):
                   pixel(10+s,10+10*i+l,'black')
-            dStr("GG!",145,110,'white','black');run=False;break
+            global clock
+            dStr("GG!",145,110,'white','black');print("Your time : "+str(clock*4)+"s");run=False;break
     if keydown(KEY_EXE):
       GameEngine.transition()
     mvmt();nxtLvl()
@@ -152,3 +155,5 @@ while run:
   Entity.platform()
   Entity.player()
   run=GameEngine.quit()
+  sleep(1/240)
+  clock += 1/240
